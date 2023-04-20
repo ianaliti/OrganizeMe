@@ -1,29 +1,23 @@
 import { useState, useEffect, useRef } from "react"
 import { TodoList } from "./TodoList";
 import { ITodo } from "../types/data"
+import { TodoForm } from "./TodoForm";
+import './App.css'
+import { MyButton } from "./MyButton";
+
 
 const App: React.FC = () => {
-    const [value, setValue] = useState('');
     const [todos, setTodos] = useState<ITodo[]>([]);
-
-    const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-        setValue(e.target.value)
-    }
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
-        if(e.key === 'Enter') addTodo();
-    }
-
-    const addTodo = () => {
-        if (value) {
+    const addTodo: AddTodo = newTodo => {
+        if (newTodo !== '') {
             setTodos([...todos, {
                 id: Date.now(),
-                title: value,
+                title: newTodo,
                 complete: false,
             }])
-            setValue('')
         }    
     }
     
@@ -46,13 +40,13 @@ const App: React.FC = () => {
         if(inputRef.current) inputRef.current.focus();
     },[])
 
-    return <div>
-        <div>
-            <input value={value} onChange={handleChange} onKeyDown={handleKeyDown} ref={inputRef} />
-            <button onClick={addTodo}>Add</button>
+    return (
+        <div className="todo-app">
+            <h1>ToDo App</h1>
+            <TodoForm addTodo={addTodo} />
+            <TodoList items={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />
+            <MyButton removeTodo={removeTodo} id={0} title={""} complete={false}/>
         </div>
-        <TodoList items = {todos} removeTodo={removeTodo} toggleTodo={toggleTodo} />
-    </div>
-}
+)}
 
 export {App}
