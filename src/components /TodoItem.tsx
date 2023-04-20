@@ -11,9 +11,7 @@ const TodoItem: React.FC<ITodoItem> = (props) => {
     return <div>
         <label className={complete? 'todo-row completed' : 'todo-row'}>
         <input type='checkbox' checked={complete} onChange={() => toggleTodo(id)} />
-        <span style={{display: 'inline-block', margin: '0 10px'}}>
             {title}
-            </span>
         <button className="button-delete"
         onClick={() => removeTodo(id)}>
             Delete</button>

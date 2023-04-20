@@ -3,7 +3,6 @@ import { TodoList } from "./TodoList";
 import { ITodo } from "../types/data"
 import { TodoForm } from "./TodoForm";
 import './App.css'
-import { MyButton } from "./MyButton";
 
 
 const App: React.FC = () => {
@@ -45,7 +44,6 @@ const App: React.FC = () => {
             <h1>ToDo App</h1>
             <TodoForm addTodo={addTodo} />
             <TodoList items={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />
-            <MyButton removeTodo={removeTodo} id={0} title={""} complete={false}/>
         </div>
 )}
 
