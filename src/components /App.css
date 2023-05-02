@@ -81,7 +81,7 @@ ul {
 
 .todo-row {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin: 4px auto;
@@ -99,4 +99,18 @@ ul {
     border: none;
     outline: none;
     color: black;    
+}
+.button-edit {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;    
+}
+
+/* Dropdown Styling */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: left;
 }

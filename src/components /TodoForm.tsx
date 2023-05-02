@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { AddTodo } from "../types/types";
 
 interface TodoFormProps {
     addTodo: AddTodo;
@@ -23,9 +24,18 @@ export const TodoForm: React.FC<TodoFormProps> = ({addTodo}) => {
 
     return (
         <form className="todo-form">
-            <input type='text' value={newTodo} className='todo-input' placeholder='ToDo Name' onChange={handleChange}/>
-            <button type="submit" className="todo-button" onClick={handleSubmit} onKeyDown={handleKeyDown}>
-                Add +
+            <input 
+                type='text' 
+                value={newTodo} 
+                className='todo-input' 
+                placeholder='ToDo Name' 
+                onChange={handleChange}/>
+            <button 
+                type="submit" 
+                className="todo-button" 
+                onClick={handleSubmit} 
+                onKeyDown={handleKeyDown}
+                > Add +
             </button>
         </form>
     )
