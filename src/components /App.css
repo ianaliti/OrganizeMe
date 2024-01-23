@@ -61,6 +61,13 @@ h1 {
     background: transparent;
 }
 
+.edit-todo-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+}
+
 .todo-input.edit {
     border: 2px solid white;
 }
@@ -107,10 +114,18 @@ ul {
     color: black;    
 }
 
-/* Dropdown Styling */
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    text-align: left;
+.button-cancel {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;    
 }
+
+.button-save {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;    
+}
+
+/* Dropdown Styling */

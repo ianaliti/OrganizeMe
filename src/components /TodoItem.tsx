@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ITodo } from "../types/data"
-import { Option } from "../types/types";
-import { Dropdown } from "./Dropdown";
+
 
 interface ITodoItem extends ITodo {
     removeTodo: (id: number) => void;
@@ -19,15 +18,21 @@ const TodoItem: React.FC<ITodoItem> = (props) => {
         editTodo(id, editingText)
     }
 
+    const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
+        if(e.key === 'Enter') saveTodo();
+    }
+
     return <div>
         <li className={complete ? 'todo-row completed' : 'todo-row'}>
             <div>
                 <input type='checkbox' checked={complete} onChange={() => toggleTodo(id)} />
                 {
                     isEditing ?
-                        (<input
+                        (<input 
+                            className="edit-todo-input"
                             type='text'
                             onChange={(e) => setEditingText(e.target.value)}
+                            onKeyDown={handleKeyDown}
                             value={editingText}
                         />)
                         :

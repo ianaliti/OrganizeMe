@@ -7,9 +7,3 @@ type Todo = {
     complete: boolean
 }
 
-type Option = {
-    value: string;
-    onClick: () => void;
-    color?: strings
-}
-

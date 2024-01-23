@@ -1,6 +1,6 @@
 import { TodoItem } from "./TodoItem"
 import { ITodo } from '../types/data'
-import { Option } from "../types/types";
+
 
 interface ITodoListProps {
     items: ITodo[];
