@@ -2,10 +2,11 @@ Users can add, edit, mark tasks as done, and delete them effortlessly. With resp
 
 Features:
 
-Task Management
-Type Safety
-Responsive Design
-Local Storage Integration
+1. Task Management
+2. Type Safety
+3. Responsive Design
+4. Local Storage Integration
+
 Tech Stack:
 
 React.js
